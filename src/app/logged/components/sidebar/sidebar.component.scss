@@ -1,0 +1,177 @@
+@import "../../../style/variables.scss";
+$sideNav-gray: #dddddd;
+
+.sideNav{
+    transition: all 0.25s ease;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    box-shadow: 0.06rem 0 0.5rem 0 #8690a3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /** LOGO */
+    .logo-container{
+        display: flex;
+        align-items: center;
+        padding: 1rem 1rem 0 1rem;
+        width: 100%;
+        .logo{
+            height: 3rem;
+            text-align: center;
+            width: 3rem;
+            min-width: 3rem;
+            background: $gradient-primary;
+            border-radius: 0.3rem;
+            padding: 0.3rem;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            border: none;
+        }
+        .logo-text{
+            margin-left: 1.5rem;
+            font-size: 24px;
+            font-weight: 700;
+            color: #8690a3;
+        }
+        .close{
+            margin-left: auto;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: transparent;
+            border: none;
+            
+            .close-icon{
+                color: #ffffff;
+                font-size: 24px;
+            }
+        }
+    }
+} 
+
+
+/** SideBar  */
+.sidenav-collapsed{
+    width: 16.5625rem;
+}
+.sidenav-nav{
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    .sidenav-nav-item{
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        .sidenav-nav-link{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 3rem;
+            color: $sideNav-gray;
+            text-decoration: none;
+            border-radius: 0.625rem;
+            transition: color .3s ease;
+
+            .sidenav-link-icon{
+                font-size: 22px;
+                width: 2rem;
+                min-width: 2rem;
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+
+            .sidenav-link-text{
+                margin-left: 3rem;
+            }
+        }
+
+        &:hover{
+            .sidenav-nav-link{
+                transition: all 0.3s ease;
+                background-color: #ffffff;
+                color: $color-dark;
+            }
+        }
+    }
+    /** ACTIVE */
+    .active{
+        background-color: #ffffff;
+        box-shadow: none;
+
+        .sidenav-link-icon,
+        .sidenav-link-text{
+            color: $color-dark;
+        }
+    }
+
+    /** SEARCH */
+    .search-active{
+        background-color: #ffffff;
+        border-radius: 0.625rem;
+
+        form{
+            .form-control{
+                width: 80%;
+                margin: 0 auto;
+                &:focus{
+                    border-color: $color-dark;
+                    box-shadow: none;
+                }
+            }
+        }
+        .sidenav-nav-link{
+            color: $color-dark;
+        }
+
+        .sidenav-nav{
+            .sidenav-search-item{
+                width: 100%;
+                padding-bottom: 0.225rem;
+                border-bottom: 2px solid $sideNav-gray;
+                .sidenav-search-link{
+                    text-decoration: none;
+                    color: $color-dark;
+                }
+            }
+            .sidenav-search-item:last-of-type{
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+/** User */
+.user{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.user-pic{
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem 1rem 1.2rem;
+}
+.pic{
+    object-fit: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: 900;
+    cursor: pointer;
+    border: none;
+}
+.username{
+    color: $sideNav-gray;
+}

@@ -1,0 +1,26 @@
+@import "../../../../style/variables.scss";
+
+.circular{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $gradient-primary;
+    transition: ease-in 0.3s;
+    text-decoration: none;
+    
+    &:hover{
+        cursor: pointer;
+        opacity: 0.9;
+    }
+
+    i{
+        font-size: 2rem;
+    }
+}
+.modal{
+    backdrop-filter: blur(15px);
+}

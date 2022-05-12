@@ -1,0 +1,65 @@
+<div class="sideNav bg-dark" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+    <div class="wrapper-up">
+        <div class="logo-container">
+            <button class="logo" (click)="expandeNav()"></button>
+            <div class="logo-text">
+                <!-- TODO LOGO -->
+            </div>
+            <button class="close" *ngIf="collapsed" (click)="closeNav()">
+                <i class="fas fa-times close-icon"></i>
+            </button>
+        </div>
+
+        <ul id="icon-list" class="sidenav-nav">
+            <!-- HOME -->
+            <li class="sidenav-nav-item" (click)="closeNav()">
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                    class="sidenav-nav-link">
+                    <i class="sidenav-link-icon fas fa-home"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Home</span>
+                </a>
+            </li>
+
+            <!-- PROJECTS -->
+            <li class="sidenav-nav-item" (click)="closeNav()">
+                <a routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                    class="sidenav-nav-link">
+                    <i class="sidenav-link-icon fas fa-table-list"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Progetti</span>
+                </a>
+            </li>
+
+            <li class="sidenav-nav-item" @fadeInOut [ngClass]="{'search-active' : isSearching}">
+                <div class="sidenav-nav-link" (click)="toggleSearch(); expandeNav();">
+                    <i class="sidenav-link-icon fas fa-search"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Cerca</span>
+                </div>
+                <div class="serch-active" *ngIf="isSearching">
+                    <!-- SEARCH -->
+                    <form @fadeInOut [formGroup]="searchingForm">
+                        <input class="form-control" formControlName="search" (keyup)="searching()" />
+                    </form>
+                    <ul class="sidenav-nav">
+                        <li class="sidenav-search-item" *ngFor="let project of projects | slice:0:5;"
+                            (click)="closeNav()">
+                            <a routerLink="/{{project.key}}" class="sidenav-search-link">
+                                <span class="sidenav-search-text" *ngIf="collapsed">{{project.key}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="user">
+        <a routerLink="/profile" class="user">
+            <div class="user-pic">
+                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHNVFoSK7BipQ/profile-displayphoto-shrink_100_100/0/1622101244301?e=1654732800&v=beta&t=fj4lclNcyYcrAgteU9rn-OfWIKjVORzdz-T8LWKQDW4"
+                    alt="User Image" class="pic">
+            </div>
+            <span class="username" @fadeInOut *ngIf="collapsed">Davide</span>
+        </a>
+    </div>
+</div>

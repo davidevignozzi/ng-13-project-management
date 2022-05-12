@@ -1,0 +1,41 @@
+@import "../../../../style/variables.scss";
+
+.modal-content{
+    width: 60%;
+    position: fixed;
+    left: calc(50% + 35px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .modal-title{
+        margin: auto 0;
+        font-size: 1.5rem;
+    }
+
+    // input
+    .modal-body{
+        .form-text{
+            float: right;
+        }
+        #project-description{
+            height: 250px;
+            resize: none;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+        }
+    }
+
+    // buttons
+    .modal-footer{
+        .btn-confirm{
+            background: $gradient-primary;
+            border: none;
+            transition: all 0.2s ease-in-out;
+
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
+}
