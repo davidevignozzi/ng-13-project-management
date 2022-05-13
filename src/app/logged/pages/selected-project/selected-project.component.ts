@@ -12,6 +12,7 @@ import { Activity } from 'src/app/mock/activities/activity';
 export class SelectedProjectComponent implements OnInit {
 
   project: Project = new Project();
+  activities: Activity[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -34,7 +35,7 @@ export class SelectedProjectComponent implements OnInit {
           this.project = project;
         } 
       );
+      this.activities = this.project.activities;
     });
   }
-
 }

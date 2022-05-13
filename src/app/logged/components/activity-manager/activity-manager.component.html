@@ -1,0 +1,137 @@
+<div id="activity-manager" class="shadow">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- ? TODO -->
+            <div class="wrap col-12 col-md-6 col-lg-3">
+                <div id="to-do" class="activity shadow">
+                    <h2 class="list-title text-center">
+                        <span>To Do</span>
+                    </h2>
+                    <ul>
+                        <li *ngFor="let act of todoes; let i = index">
+                            <div class="activity-detail">
+                                <span>{{act.name}}</span>
+                                <span *ngIf="!act.expanded" (click)="act.expanded = true">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                                <span *ngIf="act.expanded" (click)="act.expanded = false">
+                                    <i class="fa-solid fa-caret-left"></i>
+                                </span>
+                            </div>
+                            <div class="activity-full" *ngIf="act.expanded">
+                                <div class="activity-description">
+                                    <p>
+                                        {{act.description}}
+                                    </p>
+                                </div>
+                                <div class="tag" [ngStyle]="{'border-color': act.tag.color}">
+                                    <i class="fa-solid fa-tag" [ngStyle]="{'color': act.tag.color}"></i>
+                                    {{act.tag.name}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ? Progress -->
+            <div class="wrap col-12 col-md-6 col-lg-3">
+                <div id="progress" class="activity shadow">
+                    <h2 class="list-title text-center">
+                        <span>Progress</span>
+                    </h2>
+                    <ul>
+                        <li *ngFor="let act of progresses; let i = index">
+                            <div class="activity-detail">
+                                <span>{{act.name}}</span>
+                                <span *ngIf="!act.expanded" (click)="act.expanded = true">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                                <span *ngIf="act.expanded" (click)="act.expanded = false">
+                                    <i class="fa-solid fa-caret-left"></i>
+                                </span>
+                            </div>
+                            <div class="activity-full" *ngIf="act.expanded">
+                                <div class="activity-description">
+                                    <p>
+                                        {{act.description}}
+                                    </p>
+                                </div>
+                                <div class="tag" [ngStyle]="{'border-color': act.tag.color}">
+                                    <i class="fa-solid fa-tag" [ngStyle]="{'color': act.tag.color}"></i>
+                                    {{act.tag.name}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ? Completed -->
+            <div class="wrap col-12 col-md-6 col-lg-3">
+                <div id="completed" class="activity shadow">
+                    <h2 class="list-title text-center">
+                        <span>Completed</span>
+                    </h2>
+                    <ul>
+                        <li *ngFor="let act of completes; let i = index">
+                            <div class="activity-detail">
+                                <span>{{act.name}}</span>
+                                <span *ngIf="!act.expanded" (click)="act.expanded = true">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                                <span *ngIf="act.expanded" (click)="act.expanded = false">
+                                    <i class="fa-solid fa-caret-left"></i>
+                                </span>
+                            </div>
+                            <div class="activity-full" *ngIf="act.expanded">
+                                <div class="activity-description">
+                                    <p>
+                                        {{act.description}}
+                                    </p>
+                                </div>
+                                <div class="tag" [ngStyle]="{'border-color': act.tag.color}">
+                                    <i class="fa-solid fa-tag" [ngStyle]="{'color': act.tag.color}"></i>
+                                    {{act.tag.name}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ? Refused -->
+            <div class="wrap col-12 col-md-6 col-lg-3">
+                <div id="refused" class="activity shadow">
+                    <h2 class="list-title text-center">
+                        <span>Refused</span>
+                    </h2>
+                    <ul>
+                        <li *ngFor="let act of refuses; let i = index">
+                            <div class="activity-detail">
+                                <span>{{act.name}}</span>
+                                <span *ngIf="!act.expanded" (click)="act.expanded = true">
+                                    <i class="fa-solid fa-caret-down"></i>
+                                </span>
+                                <span *ngIf="act.expanded" (click)="act.expanded = false">
+                                    <i class="fa-solid fa-caret-left"></i>
+                                </span>
+                            </div>
+                            <div class="activity-full" *ngIf="act.expanded">
+                                <div class="activity-description">
+                                    <p>
+                                        {{act.description}}
+                                    </p>
+                                </div>
+                                <div class="tag" [ngStyle]="{'border-color': act.tag.color}">
+                                    <i class="fa-solid fa-tag" [ngStyle]="{'color': act.tag.color}"></i>
+                                    {{act.tag.name}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

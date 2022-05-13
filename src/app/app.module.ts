@@ -19,6 +19,7 @@ import { NewProjectCircularComponent } from './logged/components/buttons/new-pro
 import { ListComponent } from './logged/pages/list/list.component';
 import { CardXlComponent } from './logged/components/cards/card-xl/card-xl.component';
 import { SelectedProjectComponent } from './logged/pages/selected-project/selected-project.component';
+import { ActivityManagerComponent } from './logged/components/activity-manager/activity-manager.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { SelectedProjectComponent } from './logged/pages/selected-project/select
     NewProjectCircularComponent,
     ListComponent,
     CardXlComponent,
-    SelectedProjectComponent
+    SelectedProjectComponent,
+    ActivityManagerComponent
   ],
   imports: [
     BrowserModule,
