@@ -4,6 +4,7 @@ import { PROJECTS } from 'src/app/mock/project/project-mock';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ProjectService } from '../../services/project.service';
+import { ModalService } from '../../services/modal.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -50,7 +51,8 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private projectService: ProjectService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private modalService: ModalService
   ) { 
     this.searchingForm = fb.group({
       'search': ['']
@@ -77,6 +79,11 @@ export class SidebarComponent implements OnInit {
     this.query = '';
     this.searchingForm.reset();
     this.projects = PROJECTS;
+  }
+
+  // open modal
+  openModal(id: string):void {
+    this.modalService.open(id);
   }
 
   // Search

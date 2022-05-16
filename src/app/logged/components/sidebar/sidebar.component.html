@@ -1,11 +1,15 @@
 <div class="sideNav bg-dark" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
     <div class="wrapper-up">
         <div class="logo-container">
-            <button class="logo" (click)="expandeNav()"></button>
-            <div class="logo-text">
-                <!-- TODO LOGO -->
+            <button class="logo" (click)="expandeNav()">
+                <!-- <img src="https://2l1hy81mcugy3a2daw1snova-wpengine.netdna-ssl.com/wp-content/themes/ideas-latest/assets/img/noun_full_circle.png" alt="Logo"> -->
+                <!-- <img src="https://www.ideadesignfactory.com/images/layout/website/bg-light-grey-rhombus.svg" alt="Logo"> -->
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/aep-01-logo-black-and-white.png" alt="">
+            </button>
+            <div class="logo-text" *ngIf="collapsed">
+                
             </div>
-            <button class="close" *ngIf="collapsed" (click)="closeNav()">
+            <button class="close" @fadeInOut *ngIf="collapsed" (click)="closeNav()">
                 <i class="fas fa-times close-icon"></i>
             </button>
         </div>
@@ -29,13 +33,26 @@
                 </a>
             </li>
 
+            <!-- NEW PROJECT -->
+            <li class="sidenav-nav-item" (click)="openModal('new-project-modal')">
+                <div class="sidenav-nav-link">
+                    <i class="sidenav-link-icon fa-solid fa-plus"></i>
+                    <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Aggiungi</span>
+
+                </div>
+                
+                <!-- Modal -->
+                <modal-new-project [id]="'new-project-modal'" class="modal">
+                </modal-new-project>
+            </li>
+
+            <!-- SEARCH -->
             <li class="sidenav-nav-item" @fadeInOut [ngClass]="{'search-active' : isSearching}">
                 <div class="sidenav-nav-link" (click)="toggleSearch(); expandeNav();">
                     <i class="sidenav-link-icon fas fa-search"></i>
                     <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Cerca</span>
                 </div>
                 <div class="serch-active" *ngIf="isSearching">
-                    <!-- SEARCH -->
                     <form @fadeInOut [formGroup]="searchingForm">
                         <input class="form-control" formControlName="search" (keyup)="searching()" />
                     </form>

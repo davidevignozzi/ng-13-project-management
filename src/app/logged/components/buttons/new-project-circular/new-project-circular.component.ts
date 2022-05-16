@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'src/app/logged/services/modal.service';
 import { ProjectService } from 'src/app/logged/services/project.service';
 import { Project } from 'src/app/mock/project/project';
-import { PROJECTS } from 'src/app/mock/project/project-mock';
 
 @Component({
   selector: 'new-project-circular',
