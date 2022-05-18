@@ -20,6 +20,8 @@ import { ListComponent } from './logged/pages/list/list.component';
 import { CardXlComponent } from './logged/components/cards/card-xl/card-xl.component';
 import { SelectedProjectComponent } from './logged/pages/selected-project/selected-project.component';
 import { ActivityManagerComponent } from './logged/components/activity-manager/activity-manager.component';
+import { NewActivityBtnComponent } from './logged/components/buttons/new-activity-btn/new-activity-btn.component';
+import { ModalNewActivityComponent } from './logged/components/modal/modal-new-activity/modal-new-activity.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ActivityManagerComponent } from './logged/components/activity-manager/a
     ListComponent,
     CardXlComponent,
     SelectedProjectComponent,
-    ActivityManagerComponent
+    ActivityManagerComponent,
+    NewActivityBtnComponent,
+    ModalNewActivityComponent
   ],
   imports: [
     BrowserModule,

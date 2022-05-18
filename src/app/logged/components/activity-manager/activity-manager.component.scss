@@ -76,6 +76,7 @@
                     border-radius: 10px;
                     .tag{
                         width: fit-content;
+                        margin-bottom: 1rem;
                         padding: 0.5rem;
                         border: 1px solid;
                         border-radius: 10px;
@@ -83,6 +84,11 @@
                             margin-right: 0.5rem;
                             color: $color-dark;
                         }
+                    }
+
+                    .activity-description{
+                        margin-bottom: -1rem;
+                        // to delete bootstrap default
                     }
                 }
             }

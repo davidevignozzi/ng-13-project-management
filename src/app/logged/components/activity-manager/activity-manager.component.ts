@@ -22,7 +22,6 @@ export class ActivityManagerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
     console.log(this.project);
     this.checkStatus();
     console.log(this.activities, this.todoes, this.progresses, this.completes, this.refuses);
