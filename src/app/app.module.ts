@@ -22,6 +22,7 @@ import { SelectedProjectComponent } from './logged/pages/selected-project/select
 import { ActivityManagerComponent } from './logged/components/activity-manager/activity-manager.component';
 import { NewActivityBtnComponent } from './logged/components/buttons/new-activity-btn/new-activity-btn.component';
 import { ModalNewActivityComponent } from './logged/components/modal/modal-new-activity/modal-new-activity.component';
+import { ModalLoginComponent } from './not-logged/components/modal/modal-login/modal-login.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ModalNewActivityComponent } from './logged/components/modal/modal-new-a
     SelectedProjectComponent,
     ActivityManagerComponent,
     NewActivityBtnComponent,
-    ModalNewActivityComponent
+    ModalNewActivityComponent,
+    ModalLoginComponent,
   ],
   imports: [
     BrowserModule,
