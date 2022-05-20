@@ -34,11 +34,10 @@
             </li>
 
             <!-- NEW PROJECT -->
-            <li class="sidenav-nav-item" (click)="openModal('new-project-modal')">
+            <li class="sidenav-nav-item" (click)="openModal('new-project-modal'); closeNav();">
                 <div class="sidenav-nav-link">
                     <i class="sidenav-link-icon fa-solid fa-plus"></i>
                     <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Aggiungi</span>
-
                 </div>
                 
                 <!-- Modal -->
