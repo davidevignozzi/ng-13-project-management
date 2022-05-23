@@ -89,7 +89,7 @@ export class ModalNewProjectComponent implements OnInit, OnDestroy {
           id: this.projects.length + 1,
           key: future['name'].value,
           description: future['description'].value,
-          lastEdit: 'ora',
+          lastEdit: new Date,
           activities: []
         }
       );

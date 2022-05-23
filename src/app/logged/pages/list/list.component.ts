@@ -15,6 +15,15 @@ export class ListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.orderByDate();
+  }
+
+  // to order projects by date
+  orderByDate(): void {
+    this.projects = this.projects.sort(
+      (a, b) =>
+      Date.parse(b.lastEdit.toString()) - Date.parse(a.lastEdit.toString())
+    );  
   }
 
 }

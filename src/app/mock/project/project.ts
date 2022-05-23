@@ -4,6 +4,6 @@ export class Project {
     'id': number;
     'key': string;
     'description': string;
-    'lastEdit': string;
+    'lastEdit': Date;
     'activities': Activity[];
 }
