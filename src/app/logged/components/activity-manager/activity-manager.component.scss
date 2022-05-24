@@ -4,6 +4,10 @@
     border-radius: 20px;
     padding: 1rem;
 
+    .new{
+        margin-bottom: 1rem;
+    }
+
     #to-do{
         h2{
             color: $activity-todo;

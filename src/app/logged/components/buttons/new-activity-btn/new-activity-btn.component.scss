@@ -1,0 +1,9 @@
+@import "../../../../style/variables.scss";
+.btn-new-activity{
+    color: #ffffff;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    background: $gradient-primary;
+    border: none;
+    transition: 0.2s ease-in;
+}

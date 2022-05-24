@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-new-activity-btn',
+  selector: 'new-activity-btn',
   templateUrl: './new-activity-btn.component.html',
   styleUrls: ['./new-activity-btn.component.scss']
 })

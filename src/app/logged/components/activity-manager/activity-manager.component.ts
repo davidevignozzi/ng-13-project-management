@@ -13,18 +13,19 @@ export class ActivityManagerComponent implements OnInit {
   @Input() activities: Activity[] = [];
 
   // * ACTIVITIES
-  
   todoes: Activity[] = [];
   progresses: Activity[] = [];
   completes: Activity[] = [];
   refuses: Activity[] = [];
+
+  tags: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.project);
     this.checkStatus();
-    console.log(this.activities, this.todoes, this.progresses, this.completes, this.refuses);
+    this.populateTagArray();
   }
 
   // * STATUS
@@ -35,7 +36,17 @@ export class ActivityManagerComponent implements OnInit {
     });
   }
 
-  // check the status of "item" and push it in the correct column
+  // * TAGS
+  populateTagArray(): void {
+    let arr: any[] = [];
+    this.activities.forEach(a => {
+      arr.push(a.tag);
+    });
+    let names = arr.map(t => t.name);
+    this.tags = arr.filter(({name}, index) => !names.includes(name, index + 1));
+  }
+
+  // * check the status of "item" and push it in the correct column
   sortingStatus(item: Activity): void {
     switch(item.status){
       case ('todo'):
