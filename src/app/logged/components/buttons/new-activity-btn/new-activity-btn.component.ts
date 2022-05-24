@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/logged/services/modal.service';
 
 @Component({
   selector: 'new-activity-btn',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewActivityBtnComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalService: ModalService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  // open modal
+  openModal(id: string):void {
+    this.modalService.open(id);
   }
 
 }

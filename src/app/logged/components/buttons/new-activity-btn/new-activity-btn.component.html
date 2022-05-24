@@ -1,4 +1,6 @@
-<button class="btn-new-activity">
+<button class="btn-new-activity" (click)="openModal('new-activity-modal')">
     <i class="fa-solid fa-plus me-2"></i>
     <span>Nuova Attività</span>
 </button>
+
+<modal-new-activity [id]="'new-activity-modal'" class="modal"></modal-new-activity>
