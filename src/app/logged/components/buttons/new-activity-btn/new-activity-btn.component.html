@@ -3,4 +3,4 @@
     <span>Nuova Attività</span>
 </button>
 
-<modal-new-activity [id]="'new-activity-modal'" class="modal"></modal-new-activity>
+<modal-new-activity [id]="'new-activity-modal'" (sendActivity)="recieveAndSend($event)" class="modal"></modal-new-activity>

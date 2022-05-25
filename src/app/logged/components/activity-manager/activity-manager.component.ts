@@ -18,14 +18,11 @@ export class ActivityManagerComponent implements OnInit {
   completes: Activity[] = [];
   refuses: Activity[] = [];
 
-  tags: any[] = [];
-
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.project);
     this.checkStatus();
-    this.populateTagArray();
   }
 
   // * STATUS
@@ -36,14 +33,11 @@ export class ActivityManagerComponent implements OnInit {
     });
   }
 
-  // * TAGS
-  populateTagArray(): void {
-    let arr: any[] = [];
-    this.activities.forEach(a => {
-      arr.push(a.tag);
-    });
-    let names = arr.map(t => t.name);
-    this.tags = arr.filter(({name}, index) => !names.includes(name, index + 1));
+  // * Push activity
+  // recieved from modal to button to project
+  pushActivity(event: Activity){
+    this.project.activities.push(event);
+    this.sortingStatus(event);
   }
 
   // * check the status of "item" and push it in the correct column

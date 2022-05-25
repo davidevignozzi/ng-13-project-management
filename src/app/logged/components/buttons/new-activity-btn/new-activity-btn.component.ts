@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ModalService } from 'src/app/logged/services/modal.service';
+import { Activity } from 'src/app/mock/activities/activity';
 
 @Component({
   selector: 'new-activity-btn',
@@ -8,6 +9,8 @@ import { ModalService } from 'src/app/logged/services/modal.service';
 })
 export class NewActivityBtnComponent implements OnInit {
 
+  @Output() sendActivity = new EventEmitter<Activity>();
+  
   constructor(
     private modalService: ModalService
   ) { }
@@ -20,4 +23,7 @@ export class NewActivityBtnComponent implements OnInit {
     this.modalService.open(id);
   }
 
+  recieveAndSend(event: Activity){
+    this.sendActivity.emit(event);
+  }
 }

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Button wil open the modal to create new activity -->
         <div class="new text-center">
-            <new-activity-btn></new-activity-btn>
+            <new-activity-btn (sendActivity)="pushActivity($event)"></new-activity-btn>
         </div>
 
         <div class="row">

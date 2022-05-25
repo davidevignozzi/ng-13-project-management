@@ -1,50 +1,52 @@
-
 <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title">Crea una nuova attività</h5>
-      <button class="btn-close" (click)="close()"></button>
-    </div>
-    <div class="modal-body">
-        <form class="form-floating" [formGroup]="newActivityForm">
-          <div class="mb-3">
-            <label for="activityName" class="form-label">Nome dell'Attività</label>
-            <input type="text" class="form-control" id="activity-name" aria-describedby="activityName" formControlName="name">
-            <span *ngIf="notValid" class="form-text text-danger">Inserire un nome valido per la tua attività</span>
-          </div>
-          <div class="mb-3">
-            <label for="activityDescription" class="form-label">Descrizione Attività</label>
-            <textarea id="activityDescription" class="form-control" aria-describedby="activityDescription" formControlName="description"></textarea>
-          </div>
-          <div class="row mb-3">
-  
-            <div class="col-auto">
-              <label for="activityTag" class="form-label">Tag</label>
-              <input type="text" aria-describedby="activityTag" formControlName="tag" class="form-control">
-            </div>
-  
-            <div class="col d-flex align-items-end">
-              <div class="me-3">
-                <input type="color" class="form-control form-control-color" formControlName="colorTag" value="#80e0db">  
-              </div>
-    
-              <div class="align-self-end mb-1">
-                <label for="activityColor" class="form-label">Seleziona un colore per il tag</label>
-              </div>
-            </div>
-            
-          </div>
-          <div>
-            <select class="form-select" [formControl]="status">
-              <option value="todo" selected>To Do</option>
-              <option value="progress">In Progress</option>
-              <option value="completed">Completed</option>
-              <option value="refused">Refused</option>
-            </select>
-          </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-light" (click)="close()">Annulla</button>
-      <button type="button" class="btn btn-confirm text-light">Salva</button>
-    </div>
+  <div class="modal-header">
+    <h1 class="modal-title">Crea una nuova attività</h1>
+    <button class="btn-close" (click)="close()"></button>
   </div>
+  <div class="modal-body">
+    <form class="form-floating" [formGroup]="newActivityForm">
+      <div class="mb-3">
+        <label for="activityName" class="form-label">Nome dell'Attività</label>
+        <input type="text" class="form-control" id="activity-name" aria-describedby="activityName" formControlName="name">
+        <span *ngIf="notValid" class="form-text text-danger">Inserire un nome valido per la tua attività</span>
+      </div>
+      <div class="mb-3">
+        <label for="activityDescription" class="form-label">Descrizione Attività</label>
+        <textarea id="activityDescription" class="form-control" aria-describedby="activityDescription" formControlName="description"></textarea>
+      </div>
+      <div class="row mb-3">
+
+        <div class="col-auto">
+          <label for="activityTag" class="form-label">Tag</label>
+          <input type="text" aria-describedby="activityTag" formControlName="tag" class="form-control" list="tagNames" (change)="checkTagInput()">
+          <datalist id="tagNames">
+            <option *ngFor="let t of tagNames" value="{{t}}"></option>
+          </datalist>
+        </div>
+
+        <div class="col d-flex align-items-end">
+          <div class="me-3">
+            <input type="color" id="inputColor" class="form-control form-control-color" formControlName="colorTag">
+          </div>
+
+          <div class="align-self-end mb-1">
+            <label for="activityColor" class="form-label">Colore per il tag</label>
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <select class="form-select" [formControl]="status">
+          <option value="todo" selected>To Do</option>
+          <option value="progress">In Progress</option>
+          <option value="completed">Completed</option>
+          <option value="refused">Refused</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="close()">Annulla</button>
+    <button type="button" class="btn btn-confirm text-light" (click)="pushActivity()">Salva</button>
+  </div>
+</div>
