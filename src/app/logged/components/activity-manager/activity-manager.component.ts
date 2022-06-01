@@ -41,6 +41,7 @@ export class ActivityManagerComponent implements OnInit {
   }
 
   // * check the status of "item" and push it in the correct column
+  // switch in base of activity.status
   sortingStatus(item: Activity): void {
     switch(item.status){
       case ('todo'):
